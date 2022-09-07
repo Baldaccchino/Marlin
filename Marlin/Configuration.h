@@ -136,7 +136,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ender-3 Pro SKR E3"
+#define CUSTOM_MACHINE_NAME "Ender-3 Pro SKR E3 Duck Mix"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1203,8 +1203,8 @@
  *   M204 I    Angular Acceleration
  *   M204 J    Angular Travel Acceleration
  */
-#define DEFAULT_ACCELERATION                   500  // X, Y, Z ... and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION           500  // E acceleration for retracts
+#define DEFAULT_ACCELERATION                   800  // X, Y, Z ... and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION           800  // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION            1000  // (IMO- 1000) X, Y, Z ... acceleration for travel (non printing) moves
 #if ENABLED(AXIS4_ROTATES)
   #define DEFAULT_ANGULAR_ACCELERATION        3000  // I, J, K acceleration for rotational-only printing moves
@@ -1487,7 +1487,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -46, -6, -3.22 } //Tuned, originally z=-2.3; XY numbers from th3d site
+#define NOZZLE_TO_PROBE_OFFSET { -46, -6, -2.23 } //Tuned, originally z=-2.3; XY numbers from th3d site
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1572,8 +1572,8 @@
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -10    //IMO 20
-#define Z_PROBE_OFFSET_RANGE_MAX 10     //IMO 20
+#define Z_PROBE_OFFSET_RANGE_MIN -10   //IMO -20
+#define Z_PROBE_OFFSET_RANGE_MAX 10    //IMO 20
 
 // Enable the M48 repeatability test to test probe accuracy
 //#define Z_MIN_PROBE_REPEATABILITY_TEST
@@ -1701,12 +1701,13 @@
 #define X_BED_SIZE 235
 #define Y_BED_SIZE 235
 
+
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE + 15 //250
-#define Y_MAX_POS Y_BED_SIZE + 6  //241
+#define X_MAX_POS X_BED_SIZE + 15 //imo: 250
+#define Y_MAX_POS Y_BED_SIZE + 6  //imo: 241
 #define Z_MAX_POS 250
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
@@ -1985,7 +1986,7 @@
 
   #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 5              // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 0              // Set Mesh bounds as an inset region of the bed //already calculated/accounted in advanced config
   #define GRID_MAX_POINTS_X 11      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
