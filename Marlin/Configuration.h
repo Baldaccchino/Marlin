@@ -663,9 +663,9 @@
     #define DEFAULT_Ki_LIST {   2.62,   2.62 }    //IMO - 1.08 1.08
     #define DEFAULT_Kd_LIST {  78.81, 78.81 }    //IMO - 78.81 78.81
   #else
-    #define DEFAULT_Kp  24.24
-    #define DEFAULT_Ki   2.37
-    #define DEFAULT_Kd  62.05
+    #define DEFAULT_Kp  25.62//24.24
+    #define DEFAULT_Ki  2.52 //2.37
+    #define DEFAULT_Kd  65.08 //62.05
   #endif
 #endif
 
@@ -748,9 +748,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 120.86    //IMO - 41.78
-  #define DEFAULT_bedKi 23.24     //IMO - 7.32
-  #define DEFAULT_bedKd 418.97    //IMO - 158.93
+  #define DEFAULT_bedKp 168.22  //120.86    //IMO - 41.78
+  #define DEFAULT_bedKi 32.86   //23.24     //IMO - 7.32
+  #define DEFAULT_bedKd 574.20  //418.97    //IMO - 158.93
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1249,7 +1249,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.02 // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -1946,7 +1946,7 @@
     #define MESH_TEST_BED_TEMP      60    // (°C) Default bed temperature for G26.
     #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for G26 XY moves.
     #define G26_XY_FEEDRATE_TRAVEL 100    // (mm/s) Feedrate for G26 XY travel moves.
-    #define G26_RETRACT_MULTIPLIER   1.0  // G26 Q (retraction) used by default between mesh test elements.
+    #define G26_RETRACT_MULTIPLIER   1.1  // G26 Q (retraction) used by default between mesh test elements.
   #endif
 
 #endif

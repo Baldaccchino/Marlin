@@ -2145,9 +2145,9 @@
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
   // Override the mesh area if the automatic (max) area is too large
  //#define MESH_MIN_X MESH_INSET
-  #define MESH_MIN_Y 3      //IMO - old value:3
-  #define MESH_MAX_X 204   //IMO - BLTouch offset (-46, -6) from nozzle and MAX_POS is 250 default: X_BED_SIZE - (MESH_INSET) 
-  #define MESH_MAX_Y 229    //IMO - default: Y_BED_SIZE - (MESH_INSET)
+  #define MESH_MIN_Y 5      //IMO - old value:3
+  #define MESH_MAX_X 204   //IMO- 204- BLTouch offset (-46, -6) from nozzle and MAX_POS is 250 default: X_BED_SIZE - (MESH_INSET) 
+  #define MESH_MAX_Y 227    //IMO-229 - default: Y_BED_SIZE - (MESH_INSET)
 
   //Mesh Coordinates are laid out to the following formula:
   // X_coordinate = MESH_INSET + X[Index] * ((BED_SIZE - 2 * MESH_INSET)/(GRID_MAX_POINTS - 1))
